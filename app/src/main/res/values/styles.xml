@@ -1,20 +1,314 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <!--顶部标题行布局样式，返回、名称及更多包含在此样式中-->
+    <style name="TopTitle_Layout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <!--顶部标题行中 返回 的样式-->
+    <style name="TopTitle_ImageBack">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:src">@drawable/comm_button_back</item>
+    </style>
+    <!--顶部标题行中 名称 的样式-->
+    <style name="TopTitle_TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <!--顶部标题行中 更多 的样式-->
+    <style name="TopTitle_ImageMore">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:src">@drawable/comm_button_more_menu</item>
+    </style>
+    <!--顶部标题行中 增加 的样式-->
+    <style name="TopTitle_ImageAdd">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:src">@drawable/comm_button_add</item>
+    </style>
+    <!--单线 样式 -->
+    <style name="pub_shape_bottom_solid">
+        <item name="android:background">#6c7265</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+    </style>
+    <!--操作界面中，放在下面的按钮样式，如发布、选择、完成、下一步等 -->
+    <style name="pub_button_style">
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@drawable/comm_footer_button_style_sel</item>
+        <item name="android:textColor">@drawable/comm_footer_button_color_style</item>
+    </style>
+    <!--操作界面中，空白的灰度区域 -->
+    <style name="pub_null_height_style">
+        <item name="android:layout_height">15dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#f5f5f5</item>
+    </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!--事务待办及执行的进度条样式 -->
+    <style name="taskProgressBarStyle" >
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/progressbar_color</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_horizontal</item>
+        <item name="android:minHeight">8dip</item>
+        <item name="android:maxHeight">30dip</item>
+    </style>
+    <!--事务待办及执行列表中的 事务名称 样式 -->
+    <style name="taskName">
+        <item name="android:textColor">#000</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--事务待办及执行列表中的 事务主题 样式 -->
+    <style name="taskSubject">
+        <item name="android:textColor">#000</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--事务待办及执行列表中的 事务发起人 样式 -->
+    <style name="taskCreator">
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--事务待办及执行列表中的 我的意见 样式 -->
+    <style name="taskOpinion">
+        <item name="android:textColor">#252525</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+    <!--事务待办及执行列表中的 关联单位及项目 样式 -->
+    <style name="taskGuestPro">
+        <item name="android:textColor">#69775a</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--事务待办及执行列表中的 意见背景 样式 -->
+    <style name="taskOpinionBg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:background">#e3ebe8</item>
+    </style>
+    <!--事务详情中，用于包含各自定义行的总样式 -->
+    <style name="task_custom_table_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+    </style>
+    <!--事务详情中，用于显示一行的样式 -->
+    <style name="task_custom_row_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/shape_bottom_line</item>
+    </style>
+    <!--事务详情中，用于显示一行中 提示栏 的样式 -->
+    <style name="task_custom_row_name_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+    <!--事务详情中，用于显示一行中 输入框 的样式 -->
+    <style name="task_custom_row_input_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <!--事务详情中，用于显示一行中 输入框 的样式 -->
+    <style name="task_custom_row_input_style_margin">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+    <!--事务详情中，用于显示一行中 文本框 的样式 -->
+    <style name="task_custom_row_textview_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_marginRight">14dp</item>
+    </style>
+    <!--事务详情中，用于显示一行中 更多 的样式 -->
+    <style name="task_custom_row_more_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:src">@drawable/comm_button_detail</item>
+        <item name="android:layout_gravity">right</item>
+    </style>
+    <!--事务流程中，步骤名称 的样式 -->
+    <style name="task_doflow_flowName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!--事务流程中，单选步骤 的样式 -->
+    <style name="task_doflow_flowRadoButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--事务流程中，流程布局 的样式 -->
+    <style name="task_doflow_flowlayout">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--事务流程中，流程布局 的样式 -->
+    <style name="task_doflow_flowTip">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#6c7265</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!--事务流程中，选择人员 的样式 -->
+    <style name="task_doflow_flowPersonName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">3dp</item>
+        <item name="android:textColor">#6c7265</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!--事务流程中，下一步骤 的布局样式 -->
+    <style name="task_doflow_flowNextLayout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">#fff</item>
+    </style>
+    <!--用于显示正在查询的对话框样式 -->
+    <style name="Dialog" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowSoftInputMode">stateHidden|adjustResize</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <!--主界面中，事务、消息、更多等页面切换的按钮样式 -->
+    <style name="activity_main_Item_Style">
+        <item name="android:orientation">vertical</item><!-- 设置排列方式为纵向排列 -->
+        <item name="android:layout_width">fill_parent</item><!--  设置显示宽度-->
+        <item name="android:layout_height">fill_parent</item><!-- 设置显示高度 -->
+        <item name="android:layout_weight">1</item><!-- 设置占有的比重 -->
+        <item name="android:gravity">center</item><!-- 设置器吸引重量为剧中 -->
+        <item name="android:layout_gravity">center</item>
+        <item name="android:clickable">true</item><!-- 设置可被点击 -->
+        <item name="android:onClick">LayoutOnclickMethod</item><!-- 设置监听事件 -->
+    </style>
+    <!--流程列表页面中的 步骤 样式 -->
+    <style name="taskmian_FlowStep">
+        <item name="android:textColor">#000</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+    <!--流程列表页面中的 部门人员及时间 样式 -->
+    <style name="taskmian_FlowName">
+        <item name="android:textColor">#83b6a1</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+    <!--事务处理查询，更多-行样式 -->
+    <style name="task_deal_query_more_row">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <!--事务处理查询，更多-行-文本样式 -->
+    <style name="task_deal_query_more_row_textview">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">3</item>
+    </style>
+    <!--事务处理查询，更多-行-文本样式 -->
+    <style name="task_deal_query_more_row_edittext">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_bottom_line</item>
+    </style>
+    <!--事务处理查询，到 样式 -->
+    <style name="task_deal_query_until">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">到</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
 
 </resources>

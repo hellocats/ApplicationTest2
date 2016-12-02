@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp">
+
+        <!--<TextView-->
+        <!--android:id="@+id/viewbox_theme"-->
+        <!--android:text="事务主题"-->
+        <!--style="@style/taskName"-->
+        <!--android:layout_weight="5"-->
+        <!--android:singleLine="true"-->
+        <!--android:ellipsize="end"/>-->
+        <TextView
+            android:id="@+id/test_listview_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#000"
+            android:text="部门" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="3dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingTop="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  "/>
+            <TextView
+                android:id="@+id/test_listview_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:ellipsize="end"
+                android:gravity="center_vertical|center"
+                android:singleLine="true"
+                android:text="123"
+                android:textColor="#aaaaaa" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

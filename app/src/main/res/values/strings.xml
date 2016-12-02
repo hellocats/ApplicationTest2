@@ -1,4 +1,44 @@
 <resources>
     <string name="app_name">ApplicationTest2</string>
     <string name="action_settings">Settings</string>
+    <string name="loading_data">加载数据</string>
+    <string name="file_notexist_notfound">文件不存在或无内容</string>
+    <string name="file_uploading_error">上传文件出错</string>
+    <string name="file_downloading_error">下载文件出错</string>
+
+    <string name="activity_login_unit_name">重庆准点科技有限公司</string>
+    <string name="activity_login_rights">重庆科帝生软件有限公司  版权所有</string>
+    <string name="activity_login_high">高级</string>
+    <string name="activity_login_name">请输入用户名</string>
+    <string name="activity_login_pass">请输入密码</string>
+    <string name="activity_login_rem_pass">记住密码</string>
+    <string name="activity_login_auto_login">自动登录</string>
+
+    <string name="dialog_update_title">升级</string>
+    <string name="dialog_update_msg">发现新版本，版本号：</string>
+    <string name="dialog_update_msg2">，是否升级？</string>
+    <string name="dialog_update_btnupdate">升级</string>
+    <string name="dialog_update_btnnext">下次再说</string>
+    <string name="dialog_downloading_msg">正在下载升级包...</string>
+    <string name="dialog_alert_title">警告</string>
+    <string name="dialog_downfailed_btndown">重新下载</string>
+    <string name="dialog_downfailed_btnnext">以后再说</string>
+    <string name="dialog_error_title">错误</string>
+    <string name="dialog_downfailed_msg">升级失败，是否重试？</string>
+
+    <string name="activity_main_todo">待办</string>
+    <string name="activity_main_task">执行</string>
+    <string name="activity_main_message">分享</string>
+    <string name="activity_main_contact">通讯录</string>
+    <string name="activity_main_more">更多</string>
+
+    <string name="publist_select_task_title">选择事务</string>
+    <string name="publist_select_project_title">选择项目</string>
+    <string name="publist_select_person_one_title">选择人员</string>
+    <string name="publist_select_person_more_title">多选人员</string>
+    <string name="publist_select_flower_title">选择流程人员</string>
+    <string name="publist_select_guest_title">选择关联单位</string>
+    <string name="publist_select_contact_title">选择联系人</string>
+
+    <drawable name="clr_normal">#ea6506</drawable>
 </resources>

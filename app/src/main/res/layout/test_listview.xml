@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout style="@style/TopTitle_Layout">
+
+        <ImageView
+            android:id="@+id/viewbox_imgBack"
+            style="@style/TopTitle_ImageBack" />
+
+        <TextView
+            style="@style/TopTitle_TextView"
+            android:text="listview" />
+
+        <ImageView
+            android:id="@+id/viewbox_search"
+            style="@style/TopTitle_ImageMore"
+            android:src="@android:drawable/ic_menu_search" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listview_items"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="#ffC9CACB"
+        android:dividerHeight="1dip"
+        android:fadingEdge="none"
+        android:footerDividersEnabled="true"></ListView>
+
+</LinearLayout>
