@@ -7,7 +7,7 @@
     <RelativeLayout style="@style/TopTitle_Layout">
 
         <ImageView
-            android:id="@+id/viewbox_imgBack"
+            android:id="@+id/test_listview_imgBack"
             style="@style/TopTitle_ImageBack" />
 
         <TextView
@@ -15,13 +15,13 @@
             android:text="listview" />
 
         <ImageView
-            android:id="@+id/viewbox_search"
+            android:id="@+id/test_listview_imgSearch"
             style="@style/TopTitle_ImageMore"
             android:src="@android:drawable/ic_menu_search" />
     </RelativeLayout>
 
     <ListView
-        android:id="@+id/listview_items"
+        android:id="@+id/test_listview_items"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:cacheColorHint="#00000000"

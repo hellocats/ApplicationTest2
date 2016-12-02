@@ -6,8 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.example.administrator.applicationtest2.adapter.ViewHolder;
-
 import java.util.List;
 
 /**
