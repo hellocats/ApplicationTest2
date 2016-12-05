@@ -149,8 +149,8 @@ public class PullToRefreshLayout extends RelativeLayout {
                 return null;
             }
         };
-        refreshView = LayoutInflater.from(context).inflate(R.layout.util_pulltorefresh_head, this, false);
-        loadMoreView = LayoutInflater.from(context).inflate(R.layout.util_pulltorefresh_foot, this, false);
+        refreshView = LayoutInflater.from(context).inflate(R.layout.util_ptr_head, this, false);
+        loadMoreView = LayoutInflater.from(context).inflate(R.layout.util_ptr_foot, this, false);
         addView(refreshView);
         addView(loadMoreView);
     }

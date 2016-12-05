@@ -1,4 +1,4 @@
-package com.example.administrator.applicationtest2.adapter;
+package com.example.administrator.applicationtest2.util.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

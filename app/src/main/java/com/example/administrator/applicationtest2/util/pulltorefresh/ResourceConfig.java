@@ -35,9 +35,9 @@ public abstract class ResourceConfig {
     public abstract int[] configTextResIds();
 
     private int[] configImageResIdsByDefault() {
-        return new int[]{R.mipmap.icon_xw_ptr_arrow, R.mipmap.icon_xw_ptr_refresh_succeeded,
-                R.mipmap.icon_xw_ptr_refresh_failed, R.mipmap.icon_xw_ptr_load_succeeded,
-                R.mipmap.icon_xw_ptr_load_failed};
+        return new int[]{R.mipmap.util_ptr_arrow, R.mipmap.util_ptr_refresh_succeeded,
+                R.mipmap.util_ptr_refresh_failed, R.mipmap.util_ptr_load_succeeded,
+                R.mipmap.util_ptr_load_failed};
     }
 
     private int[] configTextResIdsByDefault() {

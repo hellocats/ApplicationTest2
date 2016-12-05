@@ -6,11 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.administrator.applicationtest2.baseClass.BaseClsActivity;
-import com.example.administrator.applicationtest2.view.listviewTest.ListviewActivity;
+import com.example.administrator.applicationtest2.util.baseClass.BaseClsActivity;
+import com.example.administrator.applicationtest2.mvp.view.listviewTest.ListviewActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends BaseClsActivity {
 
@@ -25,7 +24,6 @@ public class MainActivity extends BaseClsActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
         clickEvent();
         String a = ((String) "");
     }

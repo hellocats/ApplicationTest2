@@ -1,4 +1,4 @@
-package com.example.administrator.applicationtest2.model;
+package com.example.administrator.applicationtest2.bean;
 
 import cn.bmob.v3.BmobObject;
 
@@ -8,6 +8,7 @@ import cn.bmob.v3.BmobObject;
 public class User extends BmobObject {
     private int id;
     private String name;
+    private String Account;
     private String password;
     private int Amount;
     private int Phone;
@@ -50,5 +51,13 @@ public class User extends BmobObject {
 
     public void setPhone(int phone) {
         Phone = phone;
+    }
+
+    public String getAccount() {
+        return Account;
+    }
+
+    public void setAccount(String account) {
+        Account = account;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.administrator.applicationtest2.baseClass;
+package com.example.administrator.applicationtest2.util.baseClass;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;

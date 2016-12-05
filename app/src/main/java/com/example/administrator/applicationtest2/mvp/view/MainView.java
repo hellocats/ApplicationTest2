@@ -1,4 +1,4 @@
-package com.example.administrator.applicationtest2.view;
+package com.example.administrator.applicationtest2.mvp.view;
 
 /**
  * Created by Administrator on 2016-12-02.

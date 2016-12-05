@@ -1,4 +1,4 @@
-package com.example.administrator.applicationtest2.view.listviewTest;
+package com.example.administrator.applicationtest2.mvp.view.listviewTest;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,13 +7,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 
 import com.example.administrator.applicationtest2.R;
-import com.example.administrator.applicationtest2.adapter.BaseClsAdapter;
-import com.example.administrator.applicationtest2.adapter.ViewHolder;
-import com.example.administrator.applicationtest2.baseClass.BaseClsActivity;
-import com.example.administrator.applicationtest2.model.User;
+import com.example.administrator.applicationtest2.util.adapter.BaseClsAdapter;
+import com.example.administrator.applicationtest2.util.adapter.ViewHolder;
+import com.example.administrator.applicationtest2.util.baseClass.BaseClsActivity;
+import com.example.administrator.applicationtest2.bean.User;
 import com.example.administrator.applicationtest2.util.pulltorefresh.PullListView;
 import com.example.administrator.applicationtest2.util.pulltorefresh.PullToRefreshLayout;
 
@@ -21,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by hepeng on 2016-12-02.
@@ -55,14 +53,14 @@ public class ListviewActivity extends BaseClsActivity implements
 
 
     private void init() {
-        setContentView(R.layout.test_listview);
+        setContentView(R.layout.listview_test);
         mRefreshLayout.setOnRefreshListener(this);
     }
 
     private void initController() {
         // 设置适配器
         mPullListView.setAdapter(adapter = new BaseClsAdapter<User>(
-                ListviewActivity.this, lDatas, R.layout.test_listview_item)
+                ListviewActivity.this, lDatas, R.layout.listview_test_item)
         {
             @Override
             public void convert(ViewHolder helper, User item)

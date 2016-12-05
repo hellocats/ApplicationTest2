@@ -1,4 +1,4 @@
-package com.example.administrator.applicationtest2.common;
+package com.example.administrator.applicationtest2.util;
 
 import android.app.Activity;
 import android.content.Context;
