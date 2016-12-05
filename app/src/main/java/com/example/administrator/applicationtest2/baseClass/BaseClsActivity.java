@@ -1,10 +1,12 @@
 package com.example.administrator.applicationtest2.baseClass;
 
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import butterknife.ButterKnife;
 import cn.bmob.v3.Bmob;
 
 /**
@@ -17,6 +19,13 @@ public class BaseClsActivity extends AppCompatActivity {
         //第一：默认初始化
         Bmob.initialize(this, "fd10491c215bdd79965ecdb249af55b7");
     }
+
+    @Override
+    public void setContentView(@LayoutRes int layoutResID) {
+        super.setContentView(layoutResID);
+        ButterKnife.bind(this);
+    }
+
     /**
      * 显示一个Toast信息
      *

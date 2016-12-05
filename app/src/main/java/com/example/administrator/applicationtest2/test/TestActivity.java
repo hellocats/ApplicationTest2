@@ -19,8 +19,8 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2016-12-02.
  */
 public class TestActivity extends BaseClsActivity {
-    @BindView(R.id.test_listview_items)
-    ListView listView;
+//    @BindView(R.id.test_listview_items)
+//    ListView listView;
     private BaseAdapter adapter;
     private List<String> mDatas = new ArrayList<String>(Arrays.asList("Hello",
             "World", "Welcome"));
@@ -33,7 +33,7 @@ public class TestActivity extends BaseClsActivity {
     private void init() {
         setContentView(R.layout.test_listview);
         ButterKnife.bind(this);
-        listView.setAdapter(adapter = new MyAdapter(TestActivity.this,mDatas));
+//        listView.setAdapter(adapter = new MyAdapter(TestActivity.this,mDatas));
         adapter.notifyDataSetChanged();
     }
 }

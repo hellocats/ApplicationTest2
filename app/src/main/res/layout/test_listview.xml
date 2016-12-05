@@ -20,14 +20,28 @@
             android:src="@android:drawable/ic_menu_search" />
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/test_listview_items"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:cacheColorHint="#00000000"
-        android:divider="#ffC9CACB"
-        android:dividerHeight="1dip"
-        android:fadingEdge="none"
-        android:footerDividersEnabled="true"></ListView>
+    <!--<ListView-->
+        <!--android:id="@+id/test_listview_items"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:cacheColorHint="#00000000"-->
+        <!--android:divider="#ffC9CACB"-->
+        <!--android:dividerHeight="1dip"-->
+        <!--android:fadingEdge="none"-->
+        <!--android:footerDividersEnabled="true"></ListView>-->
+    <com.example.administrator.applicationtest2.util.pulltorefresh.PullToRefreshLayout
+        android:id="@+id/pullToRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.example.administrator.applicationtest2.util.pulltorefresh.PullListView
+            android:id="@+id/pullListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:listSelector="@android:color/transparent"
+            android:overScrollMode="never"
+            android:scrollingCache="false">
 
+        </com.example.administrator.applicationtest2.util.pulltorefresh.PullListView>
+    </com.example.administrator.applicationtest2.util.pulltorefresh.PullToRefreshLayout>
 </LinearLayout>

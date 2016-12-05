@@ -13,4 +13,5 @@
     <color name="red">#FF0000</color>
     <color name="workOrNot">#479072</color>
     <color name="orange_drak">#ff4e00</color>
+    <color name="refresh_text_color_gray">#999999</color>
 </resources>

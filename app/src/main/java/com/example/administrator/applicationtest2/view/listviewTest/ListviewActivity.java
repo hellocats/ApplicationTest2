@@ -14,6 +14,8 @@ import com.example.administrator.applicationtest2.adapter.BaseClsAdapter;
 import com.example.administrator.applicationtest2.adapter.ViewHolder;
 import com.example.administrator.applicationtest2.baseClass.BaseClsActivity;
 import com.example.administrator.applicationtest2.model.User;
+import com.example.administrator.applicationtest2.util.pulltorefresh.PullListView;
+import com.example.administrator.applicationtest2.util.pulltorefresh.PullToRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +24,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Administrator on 2016-12-02.
+ * Created by hepeng on 2016-12-02.
  */
-public class ListviewActivity extends BaseClsActivity {
-    @BindView(R.id.test_listview_items)
-    ListView listView;
+public class ListviewActivity extends BaseClsActivity implements
+        PullToRefreshLayout.OnRefreshListener{
+    @BindView(R.id.pullListView)
+    PullListView mPullListView;
+    @BindView(R.id.pullToRefreshLayout)
+    PullToRefreshLayout mRefreshLayout;
+
+//    @BindView(R.id.test_listview_items)
+//    ListView listView;
     @BindView(R.id.test_listview_imgBack)
     ImageView imgBack;
     @BindView(R.id.test_listview_imgSearch)
@@ -48,12 +56,12 @@ public class ListviewActivity extends BaseClsActivity {
 
     private void init() {
         setContentView(R.layout.test_listview);
-        ButterKnife.bind(this);
+        mRefreshLayout.setOnRefreshListener(this);
     }
 
     private void initController() {
         // 设置适配器
-        listView.setAdapter(adapter = new BaseClsAdapter<User>(
+        mPullListView.setAdapter(adapter = new BaseClsAdapter<User>(
                 ListviewActivity.this, lDatas, R.layout.test_listview_item)
         {
             @Override
@@ -67,12 +75,12 @@ public class ListviewActivity extends BaseClsActivity {
         });
     }
     private void setClickEvent() {
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mPullListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 try {
-                    row = (User) listView.getItemAtPosition(position);
+                    row = (User) mPullListView.getItemAtPosition(position);
                     showToast("姓名："+row.getName());
 //                    listItemsClick(row);
                 } catch (Exception e) {
@@ -90,6 +98,29 @@ public class ListviewActivity extends BaseClsActivity {
             user.setPhone(i);
             lDatas.add(user);
         }
+    }
+
+    @Override
+    public void onRefresh(PullToRefreshLayout pullToRefreshLayout) {
+        mRefreshLayout.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mRefreshLayout.refreshFinish(true);
+                adapter.notifyDataSetChanged();
+            }
+        }, 1000); // 1秒后刷新
+    }
+
+    @Override
+    public void onLoadMore(PullToRefreshLayout pullToRefreshLayout) {
+        mRefreshLayout.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getData();
+                mRefreshLayout.loadMoreFinish(true);
+                adapter.notifyDataSetChanged();
+            }
+        }, 1000); // 1秒后加载
     }
 
 
