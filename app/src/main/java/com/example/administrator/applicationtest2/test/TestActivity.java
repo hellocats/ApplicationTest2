@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2016-12-02.
  */
 public class TestActivity extends BaseClsActivity {
-    @BindView(R.id.listview_items)
+    @BindView(R.id.test_listview_items)
     ListView listView;
     private BaseAdapter adapter;
     private List<String> mDatas = new ArrayList<String>(Arrays.asList("Hello",
