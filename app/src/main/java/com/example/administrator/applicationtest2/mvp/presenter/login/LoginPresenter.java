@@ -3,7 +3,7 @@ package com.example.administrator.applicationtest2.mvp.presenter.login;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.example.administrator.applicationtest2.bean.User;
+import com.example.administrator.applicationtest2.entity.User;
 import com.example.administrator.applicationtest2.mvp.view.login.ILoginActivity;
 
 import cn.bmob.v3.exception.BmobException;

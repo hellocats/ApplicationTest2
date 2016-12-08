@@ -1,4 +1,4 @@
-package com.example.administrator.applicationtest2.mvp.view.listviewTest;
+package com.example.administrator.applicationtest2.mvp.view.test.listviewTest;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import com.example.administrator.applicationtest2.R;
 import com.example.administrator.applicationtest2.util.adapter.BaseClsAdapter;
 import com.example.administrator.applicationtest2.util.adapter.ViewHolder;
 import com.example.administrator.applicationtest2.util.baseClass.BaseClsActivity;
-import com.example.administrator.applicationtest2.bean.User;
+import com.example.administrator.applicationtest2.entity.User;
 import com.example.administrator.applicationtest2.util.pulltorefresh.PullListView;
 import com.example.administrator.applicationtest2.util.pulltorefresh.PullToRefreshLayout;
 
