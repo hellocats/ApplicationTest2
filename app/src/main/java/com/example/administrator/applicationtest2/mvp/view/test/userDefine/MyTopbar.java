@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -42,7 +43,7 @@ public class MyTopbar extends RelativeLayout {
         leftTextColor= ta.getColor(R.styleable.MyTopBar_myLeftTextColor,0);
         leftBackground=ta.getDrawable(R.styleable.MyTopBar_myLeftBackground);
         leftText = ta.getString(R.styleable.MyTopBar_myLeftText);
-        
+
         rightTextColor= ta.getColor(R.styleable.MyTopBar_myRightTextColor,0);
         rightBackground=ta.getDrawable(R.styleable.MyTopBar_myRightBackground);
         rightText = ta.getString(R.styleable.MyTopBar_myRightText);
@@ -60,28 +61,32 @@ public class MyTopbar extends RelativeLayout {
         leftButton.setTextColor(leftTextColor);
         leftButton.setBackground(leftBackground);
         leftButton.setText(leftText);
-        
+        leftButton.setLines(2);
+
         rightButton.setTextColor(rightTextColor);
         rightButton.setBackground(rightBackground);
         rightButton.setText(rightText);
+        rightButton.setLines(2);
 
         tvTitle.setTextSize(titleTextSize);
         tvTitle.setTextColor(titleTextColor);
         tvTitle.setText(title);
+        tvTitle.setGravity(Gravity.CENTER);
+        tvTitle.setLines(2);
 
-        setBackgroundColor(Color.parseColor("#73DC7E"));
-
-        leftParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        leftParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         leftParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT,TRUE);
         addView(leftButton,leftParams);
 
-        rightParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        rightParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         rightParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT,TRUE);
         addView(rightButton,rightParams);
 
-        titleParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        titleParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         titleParams.addRule(RelativeLayout.CENTER_IN_PARENT,TRUE);
         addView(tvTitle,titleParams);
+
+        setBackgroundColor(Color.parseColor("#73DC7E"));
 
     }
 }
