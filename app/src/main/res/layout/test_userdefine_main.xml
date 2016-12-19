@@ -32,4 +32,34 @@
         custom:rightIcon2="@mipmap/ic_discuss"
         custom:rightIconShow="true"
         />
+    <Button
+        android:id="@+id/test_userdefine_button1"
+        android:layout_below="@+id/test_userdefine_myTopBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="样式1"/>
+    <Button
+        android:id="@+id/test_userdefine_button2"
+        android:layout_below="@+id/test_userdefine_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="样式2"/>
+    <Button
+        android:id="@+id/test_userdefine_button3"
+        android:layout_below="@+id/test_userdefine_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="样式3"/>
+    <Button
+        android:id="@+id/test_userdefine_button4"
+        android:layout_below="@+id/test_userdefine_button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="样式2"/>
+    <Button
+        android:id="@+id/test_userdefine_button5"
+        android:layout_below="@+id/test_userdefine_button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="样式3"/>
 </RelativeLayout>
