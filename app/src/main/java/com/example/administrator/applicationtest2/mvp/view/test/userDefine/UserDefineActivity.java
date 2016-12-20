@@ -28,12 +28,24 @@ public class UserDefineActivity extends BaseClsActivity implements View.OnClickL
     Button button4;
     @BindView(R.id.test_userdefine_button5)
     Button button5;
+
+    private String upgradeInfo;
+    private static final String title="有新版本啦~";
+    private static final String sure = "升级";
+    private static final String cancle = "忽略";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_userdefine_main);
         setClickEvent();
-
+        String message ="【新增】消息相关功能|【优化】自动升级界面优化|【优化】其他功能优化";
+        StringBuilder builder = new StringBuilder("V");
+        builder.append("3.1.1");
+        builder.append("\n");
+        String upgrade =  message.replace("|","\n").toString();
+        builder.append(upgrade);
+        upgradeInfo = builder.toString();
     }
 
     private void setClickEvent() {
@@ -62,33 +74,33 @@ public class UserDefineActivity extends BaseClsActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.test_userdefine_button1:
                 new AlertDialog.Builder(UserDefineActivity.this,AlertDialog.THEME_TRADITIONAL)
-                        .setTitle("这是标题")
-                        .setMessage("简单的消息提示框")
-                        .setPositiveButton("OK", null).show();
+                        .setTitle(title)
+                        .setMessage(upgradeInfo)
+                        .setPositiveButton(sure, null).setNegativeButton(cancle,null).show();
                 break;
             case R.id.test_userdefine_button2:
                 new AlertDialog.Builder(UserDefineActivity.this,AlertDialog.THEME_HOLO_LIGHT)
-                        .setTitle("这是标题")
-                        .setMessage("简单的消息提示框")
-                        .setPositiveButton("OK", null).show();
+                        .setTitle(title)
+                        .setMessage(upgradeInfo)
+                        .setPositiveButton(sure, null).setNegativeButton(cancle,null).show();
                 break;
             case R.id.test_userdefine_button3:
                 new AlertDialog.Builder(UserDefineActivity.this,AlertDialog.THEME_HOLO_DARK)
-                        .setTitle("这是标题")
-                        .setMessage("简单的消息提示框")
-                        .setPositiveButton("OK", null).show();
+                        .setTitle(title)
+                        .setMessage(upgradeInfo)
+                        .setPositiveButton(sure, null).setNegativeButton(cancle,null).show();
                 break;
             case R.id.test_userdefine_button4:
                 new AlertDialog.Builder(UserDefineActivity.this,AlertDialog.THEME_DEVICE_DEFAULT_DARK)
-                        .setTitle("这是标题")
-                        .setMessage("简单的消息提示框")
-                        .setPositiveButton("OK", null).show();
+                        .setTitle(title)
+                        .setMessage(upgradeInfo)
+                        .setPositiveButton(sure, null).setNegativeButton(cancle,null).show();
                 break;
             case R.id.test_userdefine_button5:
                 new AlertDialog.Builder(UserDefineActivity.this,AlertDialog.THEME_DEVICE_DEFAULT_LIGHT)
-                        .setTitle("这是标题")
-                        .setMessage("简单的消息提示框")
-                        .setPositiveButton("OK", null).show();
+                        .setTitle(title)
+                        .setMessage(upgradeInfo)
+                        .setPositiveButton(sure, null).setNegativeButton(cancle,null).show();
                 break;
         }
     }
