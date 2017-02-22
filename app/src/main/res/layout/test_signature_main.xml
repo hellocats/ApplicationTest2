@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.administrator.applicationtest2.common.SignatureView
+        android:id="@+id/test_signature_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#D4D4D4" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/test_signature_btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存" />
+
+        <Button
+            android:id="@+id/test_signature_btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清除" />
+
+        <Button
+            android:id="@+id/test_signature_btnFontColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="字体颜色" />
+        <Button
+            android:id="@+id/test_signature_btnBgColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="背景颜色" />
+    </LinearLayout>
+</LinearLayout>

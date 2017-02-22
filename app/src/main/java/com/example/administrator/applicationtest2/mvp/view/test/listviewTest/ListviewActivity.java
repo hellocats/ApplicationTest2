@@ -9,12 +9,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.example.administrator.applicationtest2.R;
-import com.example.administrator.applicationtest2.util.adapter.BaseClsAdapter;
-import com.example.administrator.applicationtest2.util.adapter.ViewHolder;
-import com.example.administrator.applicationtest2.util.baseClass.BaseClsActivity;
+import com.example.administrator.applicationtest2.common.adapter.BaseClsAdapter;
+import com.example.administrator.applicationtest2.common.adapter.ViewHolder;
+import com.example.administrator.applicationtest2.common.baseClass.BaseClsActivity;
 import com.example.administrator.applicationtest2.entity.User;
-import com.example.administrator.applicationtest2.util.pulltorefresh.PullListView;
-import com.example.administrator.applicationtest2.util.pulltorefresh.PullToRefreshLayout;
+import com.example.administrator.applicationtest2.common.pulltorefresh.PullListView;
+import com.example.administrator.applicationtest2.common.pulltorefresh.PullToRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.List;

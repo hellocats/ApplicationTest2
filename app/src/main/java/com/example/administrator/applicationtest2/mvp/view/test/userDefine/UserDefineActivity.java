@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.administrator.applicationtest2.R;
-import com.example.administrator.applicationtest2.util.baseClass.BaseClsActivity;
+import com.example.administrator.applicationtest2.common.baseClass.BaseClsActivity;
 
 import butterknife.BindView;
 

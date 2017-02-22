@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.administrator.applicationtest2.R;
-import com.example.administrator.applicationtest2.util.baseClass.BaseClsActivity;
+import com.example.administrator.applicationtest2.common.baseClass.BaseClsActivity;
 import com.example.administrator.applicationtest2.mvp.presenter.login.ILoginPresenter;
 import com.example.administrator.applicationtest2.mvp.presenter.login.LoginPresenter;
 

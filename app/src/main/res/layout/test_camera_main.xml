@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="压缩比例："/>
+        <TextView
+            android:id="@+id/seekbar_zoom_edt"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <SeekBar
+        android:id="@+id/seekbar_zoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="30"
+        android:layout_marginRight="5dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="缩放宽度："/>
+        <TextView
+            android:id="@+id/seekbar_wight_edt"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <SeekBar
+        android:id="@+id/seekbar_wight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="30"
+        android:layout_marginRight="5dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="缩放高度："/>
+        <TextView
+            android:id="@+id/seekbar_height_edt"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <SeekBar
+        android:id="@+id/seekbar_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="30"
+        android:layout_marginRight="5dp"
+        />
+    <CheckBox
+        android:id="@+id/seekbar_cbEqualZoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="等比缩放"/>
+
+    <Button
+        android:id="@+id/test_btnCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="拍照"/>
+    <ImageView
+        android:id="@+id/test_imgCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

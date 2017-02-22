@@ -29,11 +29,11 @@
         <!--android:dividerHeight="1dip"-->
         <!--android:fadingEdge="none"-->
         <!--android:footerDividersEnabled="true"></ListView>-->
-    <com.example.administrator.applicationtest2.util.pulltorefresh.PullToRefreshLayout
+    <com.example.administrator.applicationtest2.common.pulltorefresh.PullToRefreshLayout
         android:id="@+id/pullToRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.example.administrator.applicationtest2.util.pulltorefresh.PullListView
+        <com.example.administrator.applicationtest2.common.pulltorefresh.PullListView
             android:id="@+id/pullListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -42,6 +42,6 @@
             android:overScrollMode="never"
             android:scrollingCache="false">
 
-        </com.example.administrator.applicationtest2.util.pulltorefresh.PullListView>
-    </com.example.administrator.applicationtest2.util.pulltorefresh.PullToRefreshLayout>
+        </com.example.administrator.applicationtest2.common.pulltorefresh.PullListView>
+    </com.example.administrator.applicationtest2.common.pulltorefresh.PullToRefreshLayout>
 </LinearLayout>

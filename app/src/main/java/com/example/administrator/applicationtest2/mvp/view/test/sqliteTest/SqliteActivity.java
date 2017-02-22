@@ -8,10 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.administrator.applicationtest2.R;
-import com.example.administrator.applicationtest2.util.DbManager;
-import com.example.administrator.applicationtest2.util.MySqliteHelper;
-import com.example.administrator.applicationtest2.util.ParamDefine;
-import com.example.administrator.applicationtest2.util.baseClass.BaseClsActivity;
+import com.example.administrator.applicationtest2.common.MySqliteHelper;
+import com.example.administrator.applicationtest2.common.ParamDefine;
+import com.example.administrator.applicationtest2.common.baseClass.BaseClsActivity;
 
 import butterknife.BindView;
 
