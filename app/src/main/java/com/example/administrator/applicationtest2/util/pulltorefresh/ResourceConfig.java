@@ -6,7 +6,7 @@ import com.example.administrator.applicationtest2.R;
 /**
  * customize image resources and text resources
  * <p/>
- * Created by woxingxiao on 2016/5/22.
+ * Created by hepeng on 2016/5/22.
  */
 public abstract class ResourceConfig {
 

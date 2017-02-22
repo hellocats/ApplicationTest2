@@ -111,7 +111,7 @@ public class ViewHolder {
         view.setImageBitmap(bm);
         return this;
     }
-//
+
 //    /**
 //     * 为ImageView设置图片
 //     *

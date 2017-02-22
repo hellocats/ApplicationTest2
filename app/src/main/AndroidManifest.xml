@@ -18,14 +18,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".util.baseClass.BaseClsActivity"/>
         <activity android:name=".mvp.view.test.listviewTest.ListviewActivity">
-
-        </activity>
-        <activity android:name=".mvp.view.test.userDefine.UserDefineActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".mvp.view.test.userDefine.UserDefineActivity">
+
         </activity>
         <activity
             android:name=".MainActivity"
