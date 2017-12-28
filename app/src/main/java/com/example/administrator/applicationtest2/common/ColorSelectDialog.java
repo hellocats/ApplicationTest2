@@ -2,6 +2,7 @@ package com.example.administrator.applicationtest2.common;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -28,10 +29,14 @@ public class ColorSelectDialog extends Dialog {
     private int selectedColor;
 
     public ColorSelectDialog(Context context, String title, OnColorChangedListener listener) {
+        this(context, Color.WHITE, title, listener);
+    }
+    public ColorSelectDialog(Context context,int initialColor,
+                                  String title, OnColorChangedListener listener) {
         super(context);
         this.context = context;
         mListener = listener;
-//        mInitialColor = initialColor;
+        mInitialColor = initialColor;
         this.title = title;
     }
 
@@ -51,6 +56,7 @@ public class ColorSelectDialog extends Dialog {
         btnSure = ((Button) findViewById(R.id.common_colorselect_btnSure));
         btnCancel = ((Button) findViewById(R.id.common_colorselect_btnCancel));
         bindEvent();
+        mColorBoard.setBackgroundColor(mInitialColor);
     }
 
     private void bindEvent() {

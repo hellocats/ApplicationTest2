@@ -1,5 +1,6 @@
 package com.example.administrator.applicationtest2.common.baseClass;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -13,11 +14,13 @@ import cn.bmob.v3.Bmob;
  * Created by Administrator on 2016-12-02.
  */
 public class BaseClsActivity extends AppCompatActivity {
+    protected Activity me;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //第一：默认初始化
         Bmob.initialize(this, "fd10491c215bdd79965ecdb249af55b7");
+        this.me = this;//引用me自己，便于子类调用
     }
 
     @Override
