@@ -40,10 +40,7 @@
         </activity>
         <activity android:name=".common.color.ColorSelect"></activity>
         <activity android:name=".view.test.camera.Camera">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".view.test.signature.Signature">
         </activity>
@@ -60,6 +57,12 @@
         </activity>
         <activity android:name=".view.test.video2.CameraTakeActivity">
 
+        </activity>
+        <activity android:name=".view.test.userDefine.ListViewDemo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <service android:name=".service.LogService">
             <intent-filter>

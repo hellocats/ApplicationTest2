@@ -63,7 +63,7 @@ public class Camera extends BaseClsActivity implements SeekBar.OnSeekBarChangeLi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_camera_main);
-        tv.setText("我没初始化");
+//        tv.setText("我没初始化");
         init();
         setEvent();
         Intent intent = new Intent(Camera.this,LogService.class);
