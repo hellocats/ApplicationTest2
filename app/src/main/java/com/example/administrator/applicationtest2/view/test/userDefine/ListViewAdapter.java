@@ -29,8 +29,10 @@ public class ListViewAdapter extends BaseAdapter{
     private Map<String,RuleEntity> rule = new HashMap();
     private LayoutInflater mInflater;
     private Context context;
+    private List<RuleEntity> rules;
     public ListViewAdapter(Context context, List<ListViewEntity> data,
-                           List<Map<String,String>> dataList,Map<String,RuleEntity> rule) {
+                           List<Map<String,String>> dataList,Map<String,RuleEntity> rule,
+                           List<RuleEntity> rules) {
         // 得到布局填充服务
         this.mInflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -38,6 +40,7 @@ public class ListViewAdapter extends BaseAdapter{
 //        this.dataItems = data;
         this.dataList = dataList;
         this.rule = rule;
+        this.rules = rules;
     }
     @Override
     public int getCount() {
@@ -84,14 +87,14 @@ public class ListViewAdapter extends BaseAdapter{
 //            }
 //        }
 
-        List<List<String>> rules = new ArrayList<>();
 
-//        for (int i = 0; i <rules.size() ; i++) {
-//            String name  = rules.get(i).split(",")[0];
-//            String lineCount = rules.get(i).split(",")[1];
-//            String cloCount = rules.get(i).split(",")[2];
-//
-//        }
+
+        for (int i = 0; i <rules.size() ; i++) {
+            String name  = rules.get(i).getsName();
+            int lineCount = rules.get(i).getnLine();
+            int cloCount = rules.get(i).getnColumn();
+
+        }
 
 
 

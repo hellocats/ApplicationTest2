@@ -1,16 +1,24 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
 //    **兼容Android6.0系统所需，如果这句话报错，可在dependencies标签下使用compile 'cn.bmob.android:http-legacy:1.0'**
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "com.example.administrator.applicationtest2"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "H8yrKDrsQtA7H1iy5WVwQ2",
+                GETUI_APP_KEY   : "p5wVvjdrYYATmtTNHFy3y2",
+                GETUI_APP_SECRET: "OrIlrPKC9u9D6cbSKpfwJ3"
+        ]
+        ndk {
+            abiFilters  "armeabi", "armeabi-v7a", "arm64-v8a", "x86","x86_64"
+        }
     }
     buildTypes {
         release {
@@ -18,12 +26,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    packagingOptions {
+//        exclude 'assets/getui_popup_bg.9.png'
+//    }
+
 }
 apply plugin: 'com.neenbedankt.android-apt'
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:appcompat-v7:26.0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 //    compile 'com.android.support:design:23.4.0'
 
     compile 'com.jakewharton:butterknife:8.0.1'
@@ -35,10 +48,14 @@ dependencies {
     compile 'cn.bmob.android:bmob-sdk:3.5.0'
 
     //bmob-push：Bmob的推送包
-    compile 'cn.bmob.android:bmob-push:0.8'
+//    compile 'cn.bmob.android:bmob-push:0.8'
 
     //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
     compile 'cn.bmob.android:http-legacy:1.0'
 
+    compile "me.leolin:ShortcutBadger:1.1.22@aar"
+//    compile "me.leolin:ShortcutBadger:1.1.13@aar"
+    compile 'com.getui:sdk:2.12.5.0'
 
+    compile 'org.greenrobot:eventbus:3.0.0'
 }

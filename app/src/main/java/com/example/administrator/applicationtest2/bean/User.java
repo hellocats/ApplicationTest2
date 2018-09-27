@@ -1,4 +1,4 @@
-package com.example.administrator.applicationtest2.entity;
+package com.example.administrator.applicationtest2.bean;
 
 import cn.bmob.v3.BmobObject;
 

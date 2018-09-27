@@ -42,6 +42,12 @@ import java.util.Map;
 @SuppressLint("SimpleDateFormat")
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
+    public static String getGlobalpath() {
+//        return Environment.getExternalStorageDirectory().getAbsolutePath()
+//                + File.separator + "crash" + File.separator;//根目录/指定目录
+//        return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString()+"/crash";//根目录/Download/指定目录
+        return Environment.getExternalStorageDirectory().toString() + "/ktask/crash";//根目录/指定目录
+    }
     public static String TAG = "MyCrash";
     // 系统默认的UncaughtException处理类
     private Thread.UncaughtExceptionHandler mDefaultHandler;
@@ -268,14 +274,6 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         String fileName = "crash-" + time + ".txt";
         return fileName;
     }
-
-    public static String getGlobalpath() {
-//        return Environment.getExternalStorageDirectory().getAbsolutePath()
-//                + File.separator + "crash" + File.separator;//根目录/指定目录
-//        return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString()+"/crash";//根目录/Download/指定目录
-        return Environment.getExternalStorageDirectory().toString() + "/crash";//根目录/指定目录
-    }
-
     public static void setTag(String tag) {
         TAG = tag;
     }
@@ -285,15 +283,20 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
      * @param autoClearDay 文件保存天数
      */
     public void autoClear(final int autoClearDay) {
-        int day = autoClearDay < 0 ? autoClearDay : -1 * autoClearDay;
-        String date = "crash-" + getOldDate(day);
-        File[] files = new File(getGlobalpath()).listFiles();
-        for (int i = 0; i < files.length; i++)
-        {
-            File f = files[i];
-            if(f.getName().contains("crash-") && date.compareTo(f.getName()) >= 0){
-                f.delete();
+        try {
+            int day = autoClearDay < 0 ? autoClearDay : -1 * autoClearDay;
+            String date = "crash-" + getOldDate(day);
+            File[] files = new File(getGlobalpath()).listFiles();
+            if(files !=null) {
+                for (int i = 0; i < files.length; i++) {
+                    File f = files[i];
+                    if (f.getName().contains("crash-") && date.compareTo(f.getName()) >= 0) {
+                        f.delete();
+                    }
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
     public static void deleteFile(String path) {

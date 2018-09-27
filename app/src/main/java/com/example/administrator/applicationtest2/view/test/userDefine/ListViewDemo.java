@@ -34,7 +34,7 @@ public class ListViewDemo  extends BaseClsActivity {
     private List<Map<String,String>> dataList = new ArrayList<>();
     private Map<String,RuleEntity> rule = new HashMap();
 
-    private List<String> rules = new ArrayList<>();
+    private List<RuleEntity> rules = new ArrayList<>();
 
     private List<List<String>> ruleList = new ArrayList<>();
     private List<String> lineList  = new ArrayList<>();
@@ -55,14 +55,14 @@ public class ListViewDemo  extends BaseClsActivity {
 //        rule.put("4","sPlace,4,1");
 //        rule.put("5","sSchool,2,2");
 
-        rules.add("sName,1,1");
-        rules.add("dYear,2,1");
-        rules.add("nAge,1,2");
-        rules.add("sHobby,3,1");
-        rules.add("sPlace,4,1");
-        rules.add("sSchool,2,2");
+        rules.add(new RuleEntity("sName",1,1));
+        rules.add(new RuleEntity("dYear",2,1));
+        rules.add(new RuleEntity("nAge",1,2));
+        rules.add(new RuleEntity("sHobby",3,1));
+        rules.add(new RuleEntity("sPlace",4,1));
+        rules.add(new RuleEntity("sSchool",2,2));
         for (int i = 0; i < rules.size() ; i++) {
-            String lineCount1= rules.get(i).split(",")[1];
+            String lineCount1= String.valueOf(rules.get(i).getnLine());
             if(!lineList.contains(lineCount1)){
                 lineList.add(lineCount1);
             }
@@ -106,7 +106,7 @@ public class ListViewDemo  extends BaseClsActivity {
             rule1.put("sSchool",ue.getsSchool());
             dataList.add(rule1);
         }
-        listView.setAdapter(viewAdapter = new ListViewAdapter(ListViewDemo.this,dataItems,dataList,rule));
+        listView.setAdapter(viewAdapter = new ListViewAdapter(ListViewDemo.this,dataItems,dataList,rule,rules));
     }
 
 }
