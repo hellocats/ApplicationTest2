@@ -58,4 +58,32 @@
             <enum name="invisible" value="1"/>
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="CustomRow">
+        <attr name="background_color" format="color" />
+        <attr name="line_color" format="color" />
+        <attr name="img_detail_visible" format="boolean" />
+        <attr name="title_text" format="string" />
+        <attr name="title_width" format="integer" />
+        <attr name="title_text_color" format="color" />
+        <attr name="title_text_drawable" format="reference|integer" />
+        <attr name="content_text" format="string" />
+        <attr name="content_hint" format="string" />
+        <attr name="content_text_color" format="color" />
+        <attr name="content_drawable" format="reference|integer" />
+        <attr name="content_enable" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="LineBreakLayout">
+        <!--标签之间左右距离-->
+        <attr name="leftAndRightSpace" format="dimension" />
+        <!--标签行距-->
+        <attr name="rowSpace" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="DashView">
+        <attr name="dashWidth" format="dimension"/>
+        <attr name="lineWidth" format="dimension"/>
+        <attr name="lineHeight" format="dimension"/>
+        <attr name="lineColor" format="color"/>
+        <attr name="dashOrientation" format="integer"/>
+    </declare-styleable>
 </resources>

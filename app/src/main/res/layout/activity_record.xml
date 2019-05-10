@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/record_edt_number"
+        android:text="10086"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/record_btn_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="拨打电话"/>
+    <Button
+        android:id="@+id/record_btn_look"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看"/>
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+    <LinearLayout
+        android:divider="@null"
+        android:showDividers="none"
+        android:id="@+id/lay_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+</LinearLayout>

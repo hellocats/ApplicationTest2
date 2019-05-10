@@ -7,8 +7,6 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
 
-import com.example.administrator.applicationtest2.R;
-
 import me.leolin.shortcutbadger.ShortcutBadger;
 
 import static cn.bmob.v3.Bmob.getApplicationContext;
@@ -28,6 +26,9 @@ public class BadgeUtil {
 	private static int notificationId = 0;
 
 	public static void showNumber(Context cxt,int badgeCount){
+		if(OSName==null) {
+			OSName = android.os.Build.BRAND.trim().toUpperCase();
+		}
 		if(SYSTEM_XIAOMI.equals(OSName)){
 			xiaomi(cxt,badgeCount);
 		}else{
@@ -43,10 +44,10 @@ public class BadgeUtil {
 		mNotificationManager.cancel(notificationId);
 		notificationId++;
 
-		Notification.Builder builder = new Notification.Builder(getApplicationContext())
-				.setContentTitle("123")
-				.setContentText("322")
-				.setSmallIcon(R.mipmap.ic_launcher);
+		Notification.Builder builder = new Notification.Builder(getApplicationContext());
+//				.setContentTitle("123")
+//				.setContentText("322")
+//				.setSmallIcon(R.mipmap.ic_launcher);
 
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 			setupNotificationChannel();

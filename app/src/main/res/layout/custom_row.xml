@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            tools:text="合同编号"
+            android:gravity="center_vertical"
+            android:id="@+id/custom_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/row_title"
+            android:textSize="18dp"/>
+        <EditText
+            android:hint="文本"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:id="@+id/custom_edt_content"
+            android:layout_marginLeft="10dp"
+            android:background="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/custom_iv_detail"
+            android:src="@drawable/comm_button_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <View
+        android:id="@+id/custom_line"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        style="@style/common_cut_line_single"/>
+</LinearLayout>

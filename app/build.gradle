@@ -16,16 +16,21 @@ android {
                 GETUI_APP_KEY   : "p5wVvjdrYYATmtTNHFy3y2",
                 GETUI_APP_SECRET: "OrIlrPKC9u9D6cbSKpfwJ3"
         ]
-        ndk {
-            abiFilters  "armeabi", "armeabi-v7a", "arm64-v8a", "x86","x86_64"
+//        ndk {
+//            abiFilters  "armeabi", "armeabi-v7a", "arm64-v8a", "x86","x86_64"
+//        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
         }
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
 //    packagingOptions {
 //        exclude 'assets/getui_popup_bg.9.png'
 //    }
@@ -33,29 +38,32 @@ android {
 }
 apply plugin: 'com.neenbedankt.android-apt'
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:26.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-//    compile 'com.android.support:design:23.4.0'
-
+    //    compile 'com.android.support:design:23.4.0'
+    //ARouter
+    compile 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     compile 'com.jakewharton:butterknife:8.0.1'
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
-
     //以下SDK开发者请根据需要自行选择
     //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
     //3.5.0：请务必查看下面注释[1]
     compile 'cn.bmob.android:bmob-sdk:3.5.0'
-
     //bmob-push：Bmob的推送包
-//    compile 'cn.bmob.android:bmob-push:0.8'
-
+    //    compile 'cn.bmob.android:bmob-push:0.8'
     //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
     compile 'cn.bmob.android:http-legacy:1.0'
-
-    compile "me.leolin:ShortcutBadger:1.1.22@aar"
-//    compile "me.leolin:ShortcutBadger:1.1.13@aar"
+    compile 'me.leolin:ShortcutBadger:1.1.22@aar'
+    //    compile "me.leolin:ShortcutBadger:1.1.13@aar"
     compile 'com.getui:sdk:2.12.5.0'
-
     compile 'org.greenrobot:eventbus:3.0.0'
+    //    compile 'com.github.zyyoona7:EasyPopup:1.1.2'
+    compile 'com.yanzhenjie:permission:2.0.0-rc4'
+    compile 'com.contrarywind:Android-PickerView:4.1.6'
+    compile 'com.github.razerdp:BasePopup:2.0.9'
+    compile 'com.android.support:cardview-v7:26.0.2'
+    compile files('libs/com.baidu.tts_2.3.2.20180713_6101c2a.jar')
 }

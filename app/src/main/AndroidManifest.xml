@@ -1,47 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.administrator.applicationtest2">
+          package="com.example.administrator.applicationtest2">
 
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17"/>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
     <!-- 支持iBeancon 需要蓝牙权限 -->
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <!-- 个推3.0电子围栏功能所需权限 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <!-- 浮动通知权限 -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <!-- 自定义权限 -->
-    <uses-permission android:name="getui.permission.GetuiService.${applicationId}" />
+    <uses-permission android:name="getui.permission.GetuiService.${applicationId}"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+
     <permission
         android:name="getui.permission.GetuiService.${applicationId}"
-        android:protectionLevel="normal" >
+        android:protectionLevel="normal">
     </permission>
     <application
-        android:usesCleartextTraffic="true"
         android:name=".Base.MyAppcation"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.administrator.applicationtest2.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
         <activity android:name=".common.baseClass.BaseClsActivity"/>
         <activity android:name=".view.test.listviewTest.ListviewActivity">
 
@@ -51,8 +68,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/app_name">
         </activity>
         <activity android:name=".common.color.ColorSelect"></activity>
         <activity android:name=".view.test.camera.Camera">
@@ -80,81 +96,141 @@
         <activity android:name=".view.test.linearlayout.LayoutActivity">
 
         </activity>
+
         <service android:name=".service.LogService">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </service>
         <service
             android:name=".service.BadgeIntentService"
             android:exported="false"></service>
+
         <activity android:name=".view.test.badge.BadgeNumberActivity">
 
         </activity>
         <activity android:name=".view.test.badge.BadgeNumberActivity1">
+
+        </activity>
+        <activity android:name=".view.test.linechart.LineChartActivity">
+
+        </activity>
+        <activity android:name=".view.test.custom.CustomControl">
+
+        </activity>
+        <activity android:name=".view.test.record.RecordActivity">
+
+        </activity>
+        <activity android:name=".view.test.falls.FallsActivity">
+
+        </activity>
+        <activity android:name=".view.test.tts.TTSActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!-- 配置SDK核心服务 -->
+        <!--<service-->
+        <!--android:name="com.igexin.sdk.PushService"-->
+        <!--android:exported="true"-->
+        <!--android:label="NotificationCenter"-->
+        <!--android:process=":pushservice">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.igexin.sdk.action.service.message"/>-->
+        <!--</intent-filter>-->
+        <!--</service>-->
 
 
-    <!-- 配置SDK核心服务 -->
-        <service
-            android:name="com.igexin.sdk.PushService"
-            android:exported="true"
-            android:label="NotificationCenter"
-            android:process=":pushservice">
-            <intent-filter>
-                <action android:name="com.igexin.sdk.action.service.message"/>
-            </intent-filter>
-        </service>
+        <!--<receiver android:name="com.igexin.sdk.PushReceiver" >-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
+        <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
+        <!--<action android:name="android.intent.action.USER_PRESENT" />-->
+        <!--<action android:name="com.igexin.sdk.action.refreshls" />-->
+        <!--&lt;!&ndash; 以下三项为可选的action声明，可大大提高service存活率和消息到达速度 &ndash;&gt;-->
+        <!--<action android:name="android.intent.action.MEDIA_MOUNTED" />-->
+        <!--<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />-->
+        <!--<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--<receiver android:name="com.igexin.download.DownloadReceiver">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
 
-
-        <receiver android:name="com.igexin.sdk.PushReceiver" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="android.intent.action.USER_PRESENT" />
-                <action android:name="com.igexin.sdk.action.refreshls" />
-                <!-- 以下三项为可选的action声明，可大大提高service存活率和消息到达速度 -->
-                <action android:name="android.intent.action.MEDIA_MOUNTED" />
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.igexin.download.DownloadReceiver">
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            </intent-filter>
-        </receiver>
-
-        <service
-            android:name=".service.PushServic"
-            android:exported="true"
-            android:label="PushService"
-            android:process=":pushservice">
-        </service>
-        <service android:name=".service.GTPushService"/>
+        <!--<service-->
+        <!--android:name=".service.PushServic"-->
+        <!--android:exported="true"-->
+        <!--android:label="PushService"-->
+        <!--android:process=":pushservice">-->
+        <!--</service>-->
+        <!--<service android:name=".service.GTPushService"-->
+        <!--android:priority="2147483647"/>-->
 
         <!--开机启动-->
         <receiver android:name=".receiver.BootCompletedReceiver">  
-                <intent-filter>    
-                        <action android:name="android.intent.action.BOOT_COMPLETED" />    
-                    </intent-filter>  
+                
+            <intent-filter>    
+                        <action android:name="android.intent.action.BOOT_COMPLETED"/>    
+                    
+            </intent-filter>
+              
         </receiver>
         <receiver
             android:name=".receiver.ScreenLockReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="android.intent.action.SCREEN_OFF" />
-                <action android:name="android.intent.action.SCREEN_ON" />
-                <action android:name="android.intent.action.ACTION_USER_PRESENT" />
+                <!--<action android:name="android.intent.action.SCREEN_OFF" />-->
+                <!--<action android:name="android.intent.action.SCREEN_ON" />-->
+                <!--<action android:name="android.intent.action.ACTION_USER_PRESENT" />-->
+                <action android:name="android.intent.action.USER_PRESENT"/>
             </intent-filter>
         </receiver>
 
+
+        <!--前台服务-->
+        <!--<service-->
+        <!--android:name=".service.DeskService"-->
+        <!--android:enabled="true"-->
+        <!--android:exported="true"-->
+        <!--android:process=":daemon_service" >-->
+        <!--</service>-->
+        <service android:name=".service.DeskService">
+        </service>
+        <!--移除前台Service通知栏标志-->
+        <service
+            android:name=".service.CancelNoticeService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":service"/>
+
+        <service
+            android:name=".service.ForeGroundService">
+        </service>
+
+        <receiver
+            android:name=".receiver.PlayerReceiver"
+            android:exported="true">
+            　
+            <intent-filter>
+                　　
+                <action android:name="play"/>
+                　　
+                <action android:name="pause"/>
+                　　
+                <action android:name="last"/>
+                　　
+                <action android:name="next"/>
+                　
+            </intent-filter>
+        </receiver>
+
+
+        <service android:name=".service.NewDeskService"/>
     </application>
 
 </manifest>

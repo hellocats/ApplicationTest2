@@ -1,7 +1,6 @@
 package com.example.administrator.applicationtest2.view.test.badge;
 
 import android.annotation.TargetApi;
-import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -10,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,7 +36,7 @@ public class BadgeNumberActivity1 extends BaseClsActivity {
 	private static String SYSTEM_XIAOMI = "XIAOMI";
 
 	private static final String NOTIFICATION_CHANNEL = "me.leolin.shortcutbadger";
-	private int notificationId = 0;
+	private int notificationId = 10;
 	private NotificationManager mNotificationManager;
 	private NotificationChannel channel;
 
@@ -51,6 +51,7 @@ public class BadgeNumberActivity1 extends BaseClsActivity {
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.e("个推","BadgeNumberActivity1，onCreate");
 		setContentView(R.layout.test_badge_number1);
 
 		OSName = android.os.Build.BRAND.trim().toUpperCase();
@@ -73,8 +74,14 @@ public class BadgeNumberActivity1 extends BaseClsActivity {
 				check();
 			}
 		});
-	}
+//		startService(new Intent(this, DeskService.class));
+//		Intent intent = new Intent(this, DeskService.class);
+//		intent.setAction("com.service.DeskService");
 
+//		Intent intent = new Intent(getApplicationContext(), ForeGroundService.class);
+//		startService(intent);
+
+	}
 	private void showNumber() {
 		badgeCount++;
 //		ShortcutBadger.removeCount(BadgeNumberActivity1.this);
@@ -157,44 +164,50 @@ public class BadgeNumberActivity1 extends BaseClsActivity {
 
 	@Override
 	protected void onDestroy() {
-		super.onDestroy();
-		if (EventBus.getDefault().isRegistered(this)) {
-			EventBus.getDefault().unregister(this);
+		try {
+			super.onDestroy();
+			if (EventBus.getDefault().isRegistered(this)) {
+				EventBus.getDefault().unregister(this);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	private void check() {
 		boolean isServiceRunning = false;
 		String result = "";
-			//检查Service状态  
-			ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-			for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
-				if ("com.igexin.sdk.PushService".equals(service.service.getClassName())) {
-					result+="1";
-//					showToast("1");
-//					isServiceRunning = true;
-				}
-				if (".service.BadgeIntentService".equals(service.service.getClassName())) {
-//					showToast("2");
-					result+="2";
-				}
-				if (".service.PushServic".equals(service.service.getClassName())) {
-//					showToast("3");
-					result+="3";
-				}
-				if (".service.GTPushService".equals(service.service.getClassName())) {
-//					showToast("4");
-					result+="4";
-				}
-			}
-//			if(!result.contains("1")){
-//				startService(new Intent(BadgeNumberActivity1.this,MainService.class));
+//			//检查Service状态  
+//			ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+//			for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+//				if ("com.igexin.sdk.PushService".equals(service.service.getClassName())) {
+//					result+="1";
+////					showToast("1");
+////					isServiceRunning = true;
+//				}
+//				if (".service.BadgeIntentService".equals(service.service.getClassName())) {
+////					showToast("2");
+//					result+="2";
+//				}
+//				if (".service.PushServic".equals(service.service.getClassName())) {
+////					showToast("3");
+//					result+="3";
+//				}
+//				if (".service.GTPushService".equals(service.service.getClassName())) {
+////					showToast("4");
+//					result+="4";
+//				}
 //			}
-			showToast(result);
-//			if (!isServiceRunning) {
-//				Intent i = new Intent(BadgeNumberActivity1.this, xxxService.class);
-//				startService(i);
-//			}
+////			if(!result.contains("1")){
+////				startService(new Intent(BadgeNumberActivity1.this,MainService.class));
+////			}
+//			showToast(result);
+////			if (!isServiceRunning) {
+////				Intent i = new Intent(BadgeNumberActivity1.this, xxxService.class);
+////				startService(i);
+////			}
+
+
 	}
 
 
