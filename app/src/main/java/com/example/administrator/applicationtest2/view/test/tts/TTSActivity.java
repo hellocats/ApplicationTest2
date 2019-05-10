@@ -101,11 +101,9 @@ public class TTSActivity extends BaseClsActivity implements View.OnClickListener
 
 					Log.i("zhh_tts", "US支持否？--》" + a +
 							"\nzh-CN支持否》--》" + b);
-
 				} else {
 					Toast.makeText(TTSActivity.this, "数据丢失或不支持", Toast.LENGTH_SHORT).show();
 				}
-
 			}
 		});
 	}
